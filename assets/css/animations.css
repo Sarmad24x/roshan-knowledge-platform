@@ -1,0 +1,272 @@
+/* ============================================
+   ROSHAN - Animations
+   ============================================ */
+
+/* ---------- Particle Background ---------- */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* ---------- Animate.css Overrides ---------- */
+.animate__animated {
+    --animate-duration: 1s;
+}
+
+.animate__delay-1s {
+    --animate-delay: 0.5s;
+}
+
+.animate__delay-2s {
+    --animate-delay: 1s;
+}
+
+.animate__delay-3s {
+    --animate-delay: 1.5s;
+}
+
+.animate__delay-4s {
+    --animate-delay: 2s;
+}
+
+/* ---------- Custom Animations ---------- */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg, var(--gold), #fff, var(--gold));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ---------- Star Animation ---------- */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration, 2s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+/* ---------- Card Entrance ---------- */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-entrance {
+    animation: cardEntrance 0.6s ease-out forwards;
+}
+
+/* ---------- Loader ---------- */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border: 4px solid rgba(255, 215, 0, 0.1);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+}
+
+/* ---------- Typing Effect ---------- */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--gold);
+    }
+}
+
+.typing-effect {
+    overflow: hidden;
+    border-right: 3px solid var(--gold);
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* ---------- Floating ---------- */
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+    66% {
+        transform: translateY(5px) rotate(-2deg);
+    }
+}
+
+.float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-fast {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.float-fast {
+    animation: float-fast 2s ease-in-out infinite;
+}
+
+/* ---------- Glow ---------- */
+@keyframes glow-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+    }
+}
+
+.glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* ---------- Slide In ---------- */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* ---------- Zoom In ---------- */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.zoom-in {
+    animation: zoomIn 0.6s ease-out forwards;
+}
+
+/* ---------- Transition Helpers ---------- */
+.transition-slow {
+    transition: all 0.8s ease;
+}
+
+.transition-medium {
+    transition: all 0.4s ease;
+}
+
+.transition-fast {
+    transition: all 0.2s ease;
+}
+
+/* ---------- Hover Effects ---------- */
+.hover-grow {
+    transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+}
+
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+.hover-glow {
+    transition: filter 0.3s ease;
+}
+
+.hover-glow:hover {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+}

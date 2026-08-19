@@ -1,0 +1,87 @@
+# 🌟 Roshan - Knowledge Platform
+
+## Enlightening Balochistan Through Understanding
+
+### 📚 About the Project
+
+**Roshan** is an educational platform designed to transform the learning culture in Balochistan from memorization and cheating to genuine understanding and critical thinking. The platform provides free access to high-quality educational content across five disciplines:
+
+- 🕌 Islamic Studies
+- 🔭 Astronomy  
+- 🧠 Psychology
+- 💭 Philosophy
+- 💻 Computer Science
+
+### 🎯 Problem Statement
+
+Students in Balochistan face significant challenges in developing a culture of genuine learning and academic integrity. Traditional education systems often fail to engage students, leading to a reliance on cheating rather than understanding.
+
+### 💡 Solution
+
+Roshan addresses this by:
+- Providing engaging, interactive content
+- Promoting understanding over memorization
+- Integrating videos, book recommendations, and quizzes
+- Creating a community of teachers and scholars
+- Encouraging critical thinking and curiosity
+
+### ✨ Features
+
+- **5 Disciplines** with comprehensive lessons
+- **Video Integration** with curiosity prompts
+- **Book Recommendations** for each subject
+- **Quiz System** with explanations
+- **User Registration** with progress tracking
+- **Admin Panel** with full CRUD operations
+- **Responsive Design** for all devices
+- **The Roshan Pledge** - Commitment to honest learning
+
+### 🛠️ Technologies Used
+
+- **Frontend:** HTML5, CSS3, Bootstrap 5, JavaScript
+- **Backend:** PHP 8.x
+- **Database:** MySQL 8.x
+- **Version Control:** Git & GitHub
+
+### 🗄️ Database Schema
+
+8 tables:
+1. users - User management
+2. categories - 5 disciplines
+3. lessons - Main content
+4. books - Book recommendations
+5. media - Images and infographics
+6. quiz_questions - Interactive quizzes
+7. user_progress - Learning tracking
+8. user_favorites - Bookmarking
+
+### 📸 Screenshots
+
+[Add screenshots of your project here]
+
+### 🎬 Demo Video
+
+[Link to your 3-5 minute video]
+
+### 📖 Project Report
+
+[Link to your 3-page report PDF]
+
+### 👨‍💻 Contributors
+
+[Your Name]
+[Your Email]
+
+### 📄 License
+
+This project is open source and available under the MIT License.
+
+### 🙏 Acknowledgments
+
+- All teachers and scholars contributing content
+- The students of Balochistan who inspire this mission
+- [Your University Name]
+
+---
+
+**"The best of you are those who learn the Quran and teach it."** - Prophet Muhammad (ﷺ)

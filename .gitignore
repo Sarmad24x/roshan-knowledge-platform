@@ -1,0 +1,30 @@
+# .gitignore
+# XAMPP/WAMP specific
+/.htaccess
+/.htpasswd
+
+# PHP errors
+error_log
+*.log
+
+# Uploaded files (keep folder structure)
+/assets/images/uploads/*.jpg
+/assets/images/uploads/*.png
+/assets/images/uploads/*.gif
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Composer
+/vendor/
+composer.lock
+
+# Environment files
+.env
+.env.local
