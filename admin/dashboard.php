@@ -28,6 +28,8 @@ $category_stats = $pdo->query("
     LEFT JOIN lessons l ON c.id = l.category_id 
     GROUP BY c.id
 ")->fetchAll();
+// Get pending users count
+$pending_users = $pdo->query("SELECT COUNT(*) FROM users WHERE is_approved = 0 AND role != 'admin'")->fetchColumn();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,6 +134,17 @@ $category_stats = $pdo->query("
                         </div>
                     </div>
                 </div>
+                    <div class="col-md-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Pending Users</h5>
+                                <h2 class="display-6"><?php echo $pending_users; ?></h2>
+                                <a href="../users/index.php" class="text-white text-decoration-none">
+                                <small>View all <i class="fas fa-arrow-right"></i></small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                 <div class="row">
                     <!-- Category Stats -->
