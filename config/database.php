@@ -24,9 +24,9 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-// Site settings
+// Site settings - CORRECT PATH
 define('SITE_NAME', 'Roshan');
-define('SITE_URL', 'http://localhost/roshan-platform/');
+define('SITE_URL', 'http://localhost/roshan-knowledge-platform/public/');  // <-- FIXED
 define('ADMIN_EMAIL', 'admin@roshan.com');
 define('UPLOAD_PATH', __DIR__ . '/../assets/images/uploads/');
 

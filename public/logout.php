@@ -1,6 +1,8 @@
 <?php
 // public/logout.php
-session_start();
+// Load config first to get SITE_URL
+require_once '../config/database.php';
+require_once '../includes/functions.php';
 
 // Destroy all session data
 $_SESSION = array();
@@ -17,7 +19,7 @@ if (ini_get("session.use_cookies")) {
 // Destroy the session
 session_destroy();
 
-// Redirect to home
-header('Location: ' . SITE_URL . 'index.php');
+// Redirect to home using SITE_URL
+header('Location: ' . SITE_URL);
 exit();
 ?>
