@@ -49,27 +49,27 @@
                 <?php if(isLoggedIn()): ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-user-circle"></i> <?php echo $_SESSION['username']; ?>
+                        <i class="fas fa-user-circle"></i> <?php echo $_SESSION['username']; ?>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="<?php echo SITE_URL; ?>profile.php"><i class="fas fa-user"></i> Profile</a></li>
-                            <li><a class="dropdown-item" href="<?php echo SITE_URL; ?>favorites.php"><i class="fas fa-heart"></i> Favorites</a></li>
-                            <?php if(hasRole('admin') || hasRole('teacher')): ?>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item text-primary" href="<?php echo SITE_URL; ?>admin/dashboard.php"><i class="fas fa-cog"></i> Admin Panel</a></li>
-                            <?php endif; ?>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger" href="<?php echo SITE_URL; ?>logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="<?php echo SITE_URL; ?>profile.php"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a class="dropdown-item" href="<?php echo SITE_URL; ?>favorites.php"><i class="fas fa-heart"></i> Favorites</a></li>
+                <?php if(hasRole('admin') || hasRole('teacher')): ?>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-primary" href="<?php echo SITE_URL; ?>admin/dashboard.php"><i class="fas fa-cog"></i> Admin Panel</a></li>
+                <?php endif; ?>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="<?php echo SITE_URL; ?>logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                         </ul>
                     </li>
                 <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo SITE_URL; ?>login.php"><i class="fas fa-sign-in-alt"></i> Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-success btn-sm px-3" href="<?php echo SITE_URL; ?>register.php"><i class="fas fa-user-plus"></i> Register</a>
-                    </li>
-                <?php endif; ?>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SITE_URL; ?>login.php"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn btn-outline-success btn-sm px-3" href="<?php echo SITE_URL; ?>register.php"><i class="fas fa-user-plus"></i> Register</a>
+    </li>
+<?php endif; ?>
             </ul>
         </div>
     </div>
