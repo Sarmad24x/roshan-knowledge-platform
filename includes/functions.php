@@ -80,4 +80,21 @@ function timeAgo($timestamp) {
         return ($years == 1) ? "1 year ago" : "$years years ago";
     }
 }
+/**
+ * Get embed URL from YouTube link
+ */
+function getEmbedUrl($url) {
+    // Check if it's a YouTube URL
+    if (strpos($url, 'youtube.com') !== false || strpos($url, 'youtu.be') !== false) {
+        // Extract video ID
+        if (preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\?]+)/', $url, $matches)) {
+            return 'https://www.youtube.com/embed/' . $matches[1];
+        }
+        // If already an embed URL
+        if (strpos($url, 'embed') !== false) {
+            return $url;
+        }
+    }
+    return $url;
+}
 ?>

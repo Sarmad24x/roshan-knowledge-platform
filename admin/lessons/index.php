@@ -121,7 +121,7 @@ $lessons = $pdo->query("
                                                     <?php endif; ?>
                                                 </td>
                                                 <td>
-                                                    <a href="<?php echo SITE_URL; ?>lesson-detail.php?id=<?php echo $lesson['id']; ?>" 
+                                                    <a href="<?php echo SITE_URL; ?>lessons-details.php?id=<?php echo $lesson['id']; ?>" 
                                                        class="btn btn-sm btn-info" target="_blank">
                                                         <i class="fas fa-eye"></i>
                                                     </a>

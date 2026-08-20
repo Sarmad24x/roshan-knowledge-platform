@@ -152,7 +152,7 @@ require_once '../includes/navbar.php';
                                     <i class="far fa-clock"></i> <?php echo $lesson['reading_time']; ?> min
                                     <i class="fas fa-eye ms-2"></i> <?php echo $lesson['view_count']; ?>
                                 </small>
-                                <a href="<?php echo SITE_URL; ?>lesson-detail.php?id=<?php echo $lesson['id']; ?>" 
+                                <a href="<?php echo SITE_URL; ?>lessons-details.php?id=<?php echo $lesson['id']; ?>" 
                                    class="btn btn-sm btn-primary">
                                     Read <i class="fas fa-arrow-right"></i>
                                 </a>

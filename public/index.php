@@ -167,7 +167,7 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-0">
-                            <a href="<?php echo SITE_URL; ?>lesson-detail.php?id=<?php echo $lesson['id']; ?>" 
+                            <a href="<?php echo SITE_URL; ?>lessons-details.php?id=<?php echo $lesson['id']; ?>" 
                                class="btn btn-primary w-100">
                                 Read Lesson <i class="fas fa-arrow-right"></i>
                             </a>
