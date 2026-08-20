@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
             
             $stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash, full_name, role, is_approved) 
-                                   VALUES (?, ?, ?, ?, 'student', 1)");
+                                   VALUES (?, ?, ?, ?, 'student', 0)");
             
             if ($stmt->execute([$username, $email, $password_hash, $full_name])) {
                 $success = 'Registration successful! You can now login.';

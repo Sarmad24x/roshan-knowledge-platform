@@ -29,7 +29,8 @@ $category_stats = $pdo->query("
     GROUP BY c.id
 ")->fetchAll();
 // Get pending users count
-$pending_users = $pdo->query("SELECT COUNT(*) FROM users WHERE is_approved = 0 AND role != 'admin'")->fetchColumn();
+$stmt = $pdo->query("SELECT COUNT(*) FROM users WHERE is_approved = 0 AND role != 'admin'");
+$pending_users = $stmt->fetchColumn();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -139,7 +140,7 @@ $pending_users = $pdo->query("SELECT COUNT(*) FROM users WHERE is_approved = 0 A
                             <div class="card-body">
                                 <h5 class="card-title">Pending Users</h5>
                                 <h2 class="display-6"><?php echo $pending_users; ?></h2>
-                                <a href="../users/index.php" class="text-white text-decoration-none">
+                                <a href="users/index.php" class="text-white text-decoration-none">
                                 <small>View all <i class="fas fa-arrow-right"></i></small>
                                 </a>
                             </div>
