@@ -36,12 +36,24 @@ require_once '../includes/navbar.php';
 </section>
 
 <!-- Books Grid -->
+<section class="py-4 bg-light border-bottom">
+    <div class="container">
+        <label for="bookCategory" class="form-label">Filter by discipline</label>
+        <select id="bookCategory" class="form-select" data-book-filter>
+            <option value="all">All disciplines</option>
+            <?php foreach($categories as $cat): ?>
+                <option value="<?php echo $cat['id']; ?>"><?php echo htmlspecialchars($cat['name']); ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</section>
+
 <section class="py-5">
     <div class="container">
         <?php if (count($books) > 0): ?>
             <div class="row g-4">
                 <?php foreach($books as $book): ?>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 reveal-on-scroll book-card" data-category="<?php echo (int)$book['category_id']; ?>">
                         <div class="card h-100 shadow-sm hover-card border-0">
                             <?php if($book['cover_image']): ?>
                                 <img src="<?php echo SITE_URL . $book['cover_image']; ?>" 

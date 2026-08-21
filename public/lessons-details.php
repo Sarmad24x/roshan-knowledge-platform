@@ -64,6 +64,7 @@ require_once '../includes/navbar.php';
 <div id="readingProgress" style="position:fixed;top:0;left:0;width:0;height:4px;background:#ffd700;z-index:9999;transition:width 0.3s;"></div>
 
 <!-- Lesson Header -->
+<main class="page-content">
 <section style="background: var(--primary-gradient);padding:60px 0 40px;">
     <div class="container">
         <div class="row">
@@ -153,7 +154,7 @@ require_once '../includes/navbar.php';
                 
                 <!-- Quiz Section -->
                 <?php if (count($quiz_questions) > 0): ?>
-                    <div class="card shadow-sm border-0 mt-4" id="quiz">
+                    <div class="card shadow-sm border-0 mt-4 reveal-on-scroll" id="quiz">
                         <div class="card-header bg-success text-white">
                             <h5 class="mb-0">
                                 <i class="fas fa-question-circle"></i> 
@@ -349,7 +350,7 @@ function checkQuiz() {
     let grade = '';
     let color = '';
     
-    if (percentage >= 80) { grade = 'Excellent! 🌟'; color = 'success'; }
+    if (percentage >= 80) { grade = 'Excellent! 🌟'; color = 'success'; if (window.launchConfetti) window.launchConfetti(); }
     else if (percentage >= 60) { grade = 'Good job! 👍'; color = 'info'; }
     else if (percentage >= 40) { grade = 'Keep learning! 📚'; color = 'warning'; }
     else { grade = 'Review the lesson again. 🔄'; color = 'danger'; }
@@ -404,5 +405,7 @@ window.addEventListener('scroll', function() {
     document.getElementById('readingProgress').style.width = progress + '%';
 });
 </script>
+
+</main>
 
 <?php require_once '../includes/footer.php'; ?>

@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin-enhanced.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -64,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="">
+                        <form method="POST" action="" class="auth-form">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label">Category Name <span class="text-danger">*</span></label>
@@ -105,6 +106,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </main>
         </div>
     </div>
+    <div class="toast-container" aria-live="polite" aria-atomic="true"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/ripple.js"></script>
 </body>
 </html>

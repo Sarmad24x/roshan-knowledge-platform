@@ -231,6 +231,26 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.05);
 }
 
+.lesson-card .card-img-top,
+.book-card .card-img-top {
+    transition: transform 0.45s ease;
+}
+
+.lesson-card:hover .card-img-top,
+.book-card:hover .card-img-top {
+    transform: scale(1.06);
+}
+
+.filter-loading {
+    opacity: 0.55;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.book-card.is-filtered {
+    display: none;
+}
+
 .lesson-card .card-footer {
     background: transparent;
     border-top: 1px solid rgba(0, 0, 0, 0.05);

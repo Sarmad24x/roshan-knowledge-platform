@@ -47,6 +47,7 @@
 <script src="<?php echo SITE_URL; ?>assets/js/ripple.js"></script>
 <script src="<?php echo SITE_URL; ?>assets/js/scroll-animations.js"></script>
 <script src="<?php echo SITE_URL; ?>assets/js/auth.js"></script>
+<script src="<?php echo SITE_URL; ?>assets/js/confetti.js"></script>
 
 </body>
 </html>

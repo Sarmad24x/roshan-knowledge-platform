@@ -17,4 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
         element.classList.add('reveal-on-scroll');
         observer.observe(element);
     });
+
+    const filter = document.querySelector('[data-book-filter]');
+    if (filter) {
+        filter.addEventListener('change', function () {
+            document.querySelectorAll('.book-card').forEach(function (card) {
+                card.classList.toggle('is-filtered', filter.value !== 'all' && card.dataset.category !== filter.value);
+            });
+        });
+    }
+
+    document.querySelectorAll('[data-filter-form]').forEach(function (form) {
+        form.addEventListener('submit', function () { form.classList.add('filter-loading'); });
+    });
 });

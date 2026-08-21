@@ -66,7 +66,7 @@ require_once '../includes/navbar.php';
 <!-- Filters -->
 <section class="py-4 bg-light border-bottom">
     <div class="container">
-        <form method="GET" action="<?php echo SITE_URL; ?>lessons.php" class="row g-3">
+        <form method="GET" action="<?php echo SITE_URL; ?>lessons.php" class="row g-3" data-filter-form>
             <div class="col-md-4">
                 <label class="form-label">Search</label>
                 <div class="input-group">
@@ -113,7 +113,7 @@ require_once '../includes/navbar.php';
         <?php if (count($lessons) > 0): ?>
             <div class="row g-4">
                 <?php foreach($lessons as $lesson): ?>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 reveal-on-scroll">
                         <div class="card h-100 shadow-sm hover-card border-0 lesson-card">
                             <?php if($lesson['image_path']): ?>
                                 <img src="<?php echo SITE_URL . $lesson['image_path']; ?>" 

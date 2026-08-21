@@ -28,4 +28,18 @@ document.addEventListener('DOMContentLoaded', function () {
             strength.querySelector('span').style.width = (level / 3 * 100) + '%';
         });
     }
+
+    document.querySelectorAll('input[type="file"][accept*="image"]').forEach(function (input) {
+        input.addEventListener('change', function () {
+            const file = input.files && input.files[0];
+            if (!file || !file.type.startsWith('image/')) return;
+            let preview = input.parentElement.querySelector('.image-preview-live');
+            if (!preview) {
+                preview = document.createElement('img');
+                preview.className = 'image-preview-live';
+                input.parentElement.appendChild(preview);
+            }
+            preview.src = URL.createObjectURL(file);
+        });
+    });
 });
