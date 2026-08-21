@@ -69,7 +69,7 @@ require_once '../includes/navbar.php';
 </section>
 
 <!-- Login Form -->
-<section class="py-5">
+<section class="py-5 page-content">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5">
@@ -82,7 +82,7 @@ require_once '../includes/navbar.php';
                             <div class="alert alert-danger"><?php echo $error; ?></div>
                         <?php endif; ?>
                         
-                        <form method="POST" action="" class="needs-validation" novalidate>
+                        <form method="POST" action="" class="needs-validation auth-form" novalidate>
                             <div class="row g-3">
                                 <div class="col-12">
                                     <label for="username" class="form-label">Username or Email <span class="text-danger">*</span></label>
@@ -92,7 +92,10 @@ require_once '../includes/navbar.php';
                                 
                                 <div class="col-12">
                                     <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" id="password" name="password" required>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="password" name="password" required>
+                                        <button class="btn btn-outline-secondary" type="button" data-password-toggle="password" aria-label="Show password" aria-pressed="false"><i class="fas fa-eye"></i></button>
+                                    </div>
                                     <div class="invalid-feedback">Please enter your password.</div>
                                 </div>
                                 

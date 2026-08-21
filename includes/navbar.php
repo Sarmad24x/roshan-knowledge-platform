@@ -1,10 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="siteHeader">
+    <div class="header-progress" id="headerProgress"></div>
     <div class="container">
         <a class="navbar-brand" href="<?php echo SITE_URL; ?>">
             <i class="fas fa-lightbulb text-warning"></i>
             <?php echo SITE_NAME; ?>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainNav">

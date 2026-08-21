@@ -44,12 +44,66 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--gold);
     padding: 12px 0;
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.is-scrolled {
+    padding: 6px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--gold) !important;
+    transition: font-size 0.3s ease;
+}
+
+.is-scrolled .navbar-brand {
+    font-size: 1.5rem;
+}
+
+.header-progress {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--gold);
+    box-shadow: 0 0 10px var(--gold);
+    transition: width 0.1s linear;
+}
+
+.toast-container {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 10001;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.roshan-toast {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 260px;
+    max-width: min(420px, calc(100vw - 2rem));
+    padding: 0.9rem 1rem;
+    color: #fff;
+    background: #15153f;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.roshan-toast.is-visible { opacity: 1; transform: translateY(0); }
+.roshan-toast--success { border-left-color: #2ecc71; }
+.roshan-toast--error { border-left-color: #e74c3c; }
+.roshan-toast button { margin-left: auto; color: #fff; background: none; border: 0; font-size: 1.25rem; }
 }
 
 .navbar-brand i {
@@ -71,6 +125,26 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link.active {
     background: var(--gold);
     color: var(--primary-dark) !important;
+}
+
+.navbar-toggler {
+    transition: transform 0.25s ease;
+}
+
+.navbar-toggler[aria-expanded="true"] {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    .navbar-collapse.show {
+        max-height: 75vh;
+    }
 }
 
 /* ---------- Hero Section ---------- */

@@ -1,0 +1,10 @@
+/* Authentication interaction styles */
+.auth-form .form-control:focus { transform: translateY(-1px); }
+.auth-form .btn-warning { animation: auth-pulse 2.4s ease-in-out infinite; }
+.auth-form.is-invalid { animation: auth-shake 0.35s ease; }
+.password-strength { height: 4px; margin-top: 0.5rem; overflow: hidden; background: #e9ecef; border-radius: 4px; }
+.password-strength span { display: block; width: 0; height: 100%; background: #e74c3c; transition: width 0.25s ease, background 0.25s ease; }
+.password-strength[data-level="2"] span { background: #f39c12; }
+.password-strength[data-level="3"] span { background: #2ecc71; }
+@keyframes auth-pulse { 50% { box-shadow: 0 8px 24px rgba(255, 215, 0, 0.25); } }
+@keyframes auth-shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }

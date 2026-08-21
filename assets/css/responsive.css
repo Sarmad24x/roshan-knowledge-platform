@@ -135,6 +135,18 @@
     }
 }
 
+@media (max-width: 576px) {
+    .toast-container {
+        right: 0.75rem;
+        bottom: 0.75rem;
+        left: 0.75rem;
+    }
+
+    .roshan-toast {
+        min-width: 0;
+    }
+}
+
 /* ---------- High Contrast ---------- */
 @media (prefers-contrast: high) {
     :root {

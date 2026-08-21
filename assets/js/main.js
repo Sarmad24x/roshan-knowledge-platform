@@ -5,6 +5,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
+    const siteHeader = document.getElementById('siteHeader');
+    const headerProgress = document.getElementById('headerProgress');
+    const updateHeader = () => {
+        if (siteHeader) siteHeader.classList.toggle('is-scrolled', window.scrollY > 24);
+        if (headerProgress) {
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            headerProgress.style.width = (height > 0 ? window.scrollY / height * 100 : 0) + '%';
+        }
+    };
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+
     // ---------- Initialize Bootstrap Tooltips ----------
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.map(function(tooltipTriggerEl) {

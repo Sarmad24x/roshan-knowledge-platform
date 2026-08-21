@@ -22,8 +22,16 @@
     <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/style.css">
     <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/animations.css">
     <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/responsive.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/loader.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/auth.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="<?php echo SITE_URL; ?>assets/images/icons/favicon.png">
 </head>
 <body>
+    <div class="roshan-loader" aria-label="Loading Roshan" role="status">
+        <div class="roshan-loader__content">
+            <div class="roshan-loader__mark"><i class="fas fa-lightbulb"></i></div>
+            <p class="roshan-loader__name"><?php echo SITE_NAME; ?></p>
+        </div>
+    </div>

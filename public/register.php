@@ -91,7 +91,7 @@ require_once '../includes/navbar.php';
                             <div class="alert alert-success"><?php echo $success; ?></div>
                         <?php endif; ?>
                         
-                        <form method="POST" action="" class="needs-validation" novalidate>
+                        <form method="POST" action="" class="needs-validation auth-form" novalidate>
                             <div class="row g-3">
                                 <div class="col-12">
                                     <label for="full_name" class="form-label">Full Name <span class="text-danger">*</span></label>
@@ -115,6 +115,7 @@ require_once '../includes/navbar.php';
                                 <div class="col-md-6">
                                     <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
                                     <input type="password" class="form-control" id="password" name="password" required>
+                                    <div class="password-strength" aria-live="polite"><span></span></div>
                                     <div class="form-text">At least 6 characters</div>
                                     <div class="invalid-feedback">Please enter a password.</div>
                                 </div>

@@ -1,0 +1,9 @@
+/* Shared admin polish */
+.table tbody tr { transition: background-color 0.2s ease, transform 0.2s ease; }
+.table tbody tr:hover { background: rgba(255, 215, 0, 0.08); transform: translateX(3px); }
+.status-badge { display: inline-flex; align-items: center; gap: 0.35rem; }
+.status-badge.published::before { width: 6px; height: 6px; border-radius: 50%; background: #2ecc71; content: ''; box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5); animation: status-pulse 2s infinite; }
+.btn { position: relative; overflow: hidden; }
+.ripple { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.38); transform: scale(0); animation: ripple 0.6s linear; pointer-events: none; }
+@keyframes status-pulse { 70% { box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
+@keyframes ripple { to { transform: scale(4); opacity: 0; } }

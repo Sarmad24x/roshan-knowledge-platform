@@ -22,6 +22,7 @@ require_once '../includes/navbar.php';
 ?>
 
 <!-- Hero Section with Particles -->
+<main class="page-content">
 <section class="hero-section position-relative" style="min-height: 80vh; background: linear-gradient(135deg, #0a0a2e 0%, #1a0a3e 50%, #0a0a2e 100%);">
     <div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
     <div class="container position-relative" style="z-index: 1; padding-top: 100px;">
@@ -30,7 +31,7 @@ require_once '../includes/navbar.php';
                 <h1 class="display-1 fw-bold animate__animated animate__fadeInUp">
                     <i class="fas fa-lightbulb text-warning"></i> Roshan
                 </h1>
-                <p class="display-6 fw-light animate__animated animate__fadeInUp animate__delay-1s">
+                <p class="display-6 fw-light animate__animated animate__fadeInUp animate__delay-1s" data-typing-text="Enlightenment Through Understanding">
                     Enlightenment Through Understanding
                 </p>
                 <p class="lead animate__animated animate__fadeInUp animate__delay-2s">
@@ -51,15 +52,15 @@ require_once '../includes/navbar.php';
         <!-- Stats -->
         <div class="row mt-5 animate__animated animate__fadeInUp animate__delay-4s">
             <div class="col-md-4 text-center text-white">
-                <h2 class="display-4 fw-bold text-warning"><?php echo $total_lessons; ?></h2>
+                <h2 class="display-4 fw-bold text-warning counter" data-target="<?php echo $total_lessons; ?>">0</h2>
                 <p>Lessons Available</p>
             </div>
             <div class="col-md-4 text-center text-white">
-                <h2 class="display-4 fw-bold text-warning"><?php echo $total_teachers; ?></h2>
+                <h2 class="display-4 fw-bold text-warning counter" data-target="<?php echo $total_teachers; ?>">0</h2>
                 <p>Teachers & Scholars</p>
             </div>
             <div class="col-md-4 text-center text-white">
-                <h2 class="display-4 fw-bold text-warning"><?php echo $total_books; ?></h2>
+                <h2 class="display-4 fw-bold text-warning counter" data-target="<?php echo $total_books; ?>">0</h2>
                 <p>Recommended Books</p>
             </div>
         </div>
@@ -189,5 +190,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<script src="<?php echo SITE_URL; ?>assets/js/hero.js"></script>
+</main>
 
 <?php require_once '../includes/footer.php'; ?>
