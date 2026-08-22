@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 .roshan-toast--success { border-left-color: #2ecc71; }
 .roshan-toast--error { border-left-color: #e74c3c; }
 .roshan-toast button { margin-left: auto; color: #fff; background: none; border: 0; font-size: 1.25rem; }
-}
+
 
 .navbar-brand i {
     margin-right: 10px;
@@ -430,4 +430,113 @@ footer .fa-2x:hover {
     width: 60px;
     height: 3px;
     background: var(--gold);
+}
+/* ============================================
+   FIX: Remove White Bar Above Pages
+   ============================================ */
+
+/* Remove any unwanted margins/padding */
+body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+.page-header {
+    margin-top: -1px !important;
+    padding-top: 60px !important;
+}
+
+/* Fix for any white space */
+.container-fluid,
+.container {
+    padding-top: 0 !important;
+}
+
+/* Ensure hero sections don't have extra space */
+.hero-section,
+.page-header,
+.auth-section {
+    margin-top: 0 !important;
+    padding-top: 60px !important;
+}
+
+/* Fix for sticky navbar offset */
+.sticky-top {
+    top: 56px;
+}
+
+/* Remove any default section margins */
+section {
+    margin-top: 0 !important;
+}
+
+/* Fix for Bootstrap container padding */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* ============================================
+   FIX: Remove White Bar & Spacing Issues
+   ============================================ */
+
+/* Remove all default margins from sections */
+section {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Fix for the page header */
+.page-header,
+section[style*="primary-gradient"] {
+    margin-top: -1px !important;
+    padding-top: 50px !important;
+    padding-bottom: 30px !important;
+}
+
+/* Ensure the hero/header sections don't add extra space */
+.bg-dark.py-5,
+section.py-5 {
+    margin-top: -1px !important;
+}
+
+/* Fix for the loader overlay */
+.roshan-loader {
+    z-index: 9999;
+}
+
+/* Fix for the header progress bar */
+.header-progress {
+    height: 0 !important;
+    display: none !important;
+}
+
+/* Ensure the navbar doesn't add extra space */
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+/* Fix for the main content container */
+main, .container-fluid, .container {
+    padding-top: 0 !important;
+}
+
+/* Remove any extra space from the body */
+body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Fix for the sticky filter bar */
+.sticky-top {
+    top: 56px;
+    z-index: 100;
+}
+
+/* Ensure cards don't have extra space */
+.card {
+    margin-bottom: 0 !important;
 }

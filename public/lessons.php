@@ -49,27 +49,34 @@ require_once '../includes/header.php';
 require_once '../includes/navbar.php';
 ?>
 
-<!-- Page Header -->
-<section class="py-5" style="background: var(--primary-gradient);">
+<!-- ============================================================ -->
+<!-- PAGE HEADER -->
+<!-- ============================================================ -->
+<div style="background: var(--primary-gradient); padding: 50px 0 30px 0; margin-top: -1px;">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center text-white">
-                <h1 class="display-4 fw-bold">
+        <div class="row text-center">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4 fw-bold text-white">
                     <i class="fas fa-book text-warning"></i> Lessons
                 </h1>
-                <p class="lead">Explore our growing library of lessons</p>
+                <p class="lead text-white-50">Explore our growing library of lessons</p>
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
+                    <i class="fas fa-graduation-cap"></i> <?php echo count($lessons); ?> Lessons Available
+                </span>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- Filters -->
-<section class="py-4 bg-light border-bottom">
+<!-- ============================================================ -->
+<!-- FILTERS - STICKY -->
+<!-- ============================================================ -->
+<div style="background: #f8f9fa; border-bottom: 1px solid #eee; padding: 15px 0; position: sticky; top: 56px; z-index: 100; backdrop-filter: blur(10px);">
     <div class="container">
-        <form method="GET" action="<?php echo SITE_URL; ?>lessons.php" class="row g-3" data-filter-form>
+        <form method="GET" action="<?php echo SITE_URL; ?>lessons.php" class="row g-2 align-items-end">
             <div class="col-md-4">
-                <label class="form-label">Search</label>
-                <div class="input-group">
+                <label class="form-label fw-bold small text-muted"><i class="fas fa-search text-warning"></i> Search</label>
+                <div class="input-group input-group-sm">
                     <input type="text" name="search" class="form-control" placeholder="Search lessons..." 
                            value="<?php echo htmlspecialchars($search); ?>">
                     <button class="btn btn-warning" type="submit">
@@ -78,8 +85,8 @@ require_once '../includes/navbar.php';
                 </div>
             </div>
             <div class="col-md-3">
-                <label class="form-label">Category</label>
-                <select name="category" class="form-select" onchange="this.form.submit()">
+                <label class="form-label fw-bold small text-muted"><i class="fas fa-layer-group text-warning"></i> Category</label>
+                <select name="category" class="form-select form-select-sm" onchange="this.form.submit()">
                     <option value="0">All Categories</option>
                     <?php foreach($categories as $cat): ?>
                         <option value="<?php echo $cat['id']; ?>" 
@@ -90,54 +97,59 @@ require_once '../includes/navbar.php';
                 </select>
             </div>
             <div class="col-md-3">
-                <label class="form-label">Difficulty</label>
-                <select name="difficulty" class="form-select" onchange="this.form.submit()">
+                <label class="form-label fw-bold small text-muted"><i class="fas fa-signal text-warning"></i> Difficulty</label>
+                <select name="difficulty" class="form-select form-select-sm" onchange="this.form.submit()">
                     <option value="">All Levels</option>
                     <option value="beginner" <?php echo ($difficulty == 'beginner') ? 'selected' : ''; ?>>Beginner</option>
                     <option value="intermediate" <?php echo ($difficulty == 'intermediate') ? 'selected' : ''; ?>>Intermediate</option>
                     <option value="advanced" <?php echo ($difficulty == 'advanced') ? 'selected' : ''; ?>>Advanced</option>
                 </select>
             </div>
-            <div class="col-md-2 d-flex align-items-end">
-                <a href="<?php echo SITE_URL; ?>lessons.php" class="btn btn-outline-secondary w-100">
+            <div class="col-md-2">
+                <a href="<?php echo SITE_URL; ?>lessons.php" class="btn btn-outline-secondary btn-sm w-100">
                     <i class="fas fa-undo"></i> Reset
                 </a>
             </div>
         </form>
     </div>
-</section>
+</div>
 
-<!-- Lessons Grid -->
-<section class="py-5">
+<!-- ============================================================ -->
+<!-- LESSONS GRID -->
+<!-- ============================================================ -->
+<div style="padding: 30px 0;">
     <div class="container">
         <?php if (count($lessons) > 0): ?>
             <div class="row g-4">
-                <?php foreach($lessons as $lesson): ?>
-                    <div class="col-md-6 col-lg-4 reveal-on-scroll">
-                        <div class="card h-100 shadow-sm hover-card border-0 lesson-card">
+                <?php foreach($lessons as $index => $lesson): ?>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden" 
+                             style="border-radius: 16px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            
                             <?php if($lesson['image_path']): ?>
                                 <img src="<?php echo SITE_URL . $lesson['image_path']; ?>" 
-                                     class="card-img-top" alt="<?php echo htmlspecialchars($lesson['title']); ?>" 
-                                     style="height: 200px; object-fit: cover;">
+                                     class="card-img-top" 
+                                     alt="<?php echo htmlspecialchars($lesson['title']); ?>" 
+                                     style="height: 200px; object-fit: cover; transition: transform 0.5s ease;">
                             <?php else: ?>
-                                <div class="bg-secondary text-white text-center py-5" style="height: 200px;">
+                                <div class="bg-secondary text-white text-center py-5" style="height: 200px; display: flex; align-items: center; justify-content: center;">
                                     <i class="fas fa-book-open fa-3x"></i>
                                 </div>
                             <?php endif; ?>
                             
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span class="badge" style="background: <?php echo $lesson['color_hex'] ?? '#6c757d'; ?>;">
+                                    <span class="badge px-3 py-2" style="background: <?php echo $lesson['color_hex'] ?? '#6c757d'; ?>; color: white;">
                                         <?php echo htmlspecialchars($lesson['category_name'] ?? 'General'); ?>
                                     </span>
-                                    <span class="badge bg-secondary">
+                                    <span class="badge bg-<?php echo $lesson['difficulty'] == 'beginner' ? 'success' : ($lesson['difficulty'] == 'intermediate' ? 'warning' : 'danger'); ?>">
                                         <?php echo ucfirst($lesson['difficulty']); ?>
                                     </span>
                                 </div>
                                 
-                                <h5 class="card-title"><?php echo htmlspecialchars($lesson['title']); ?></h5>
+                                <h5 class="card-title fw-bold"><?php echo htmlspecialchars($lesson['title']); ?></h5>
                                 <p class="card-text small text-muted">
-                                    <?php echo htmlspecialchars(substr($lesson['summary'] ?? $lesson['content'], 0, 120)) . '...'; ?>
+                                    <?php echo htmlspecialchars(substr($lesson['summary'] ?? $lesson['content'], 0, 100)) . '...'; ?>
                                 </p>
                                 
                                 <?php if($lesson['video_url']): ?>
@@ -153,8 +165,8 @@ require_once '../includes/navbar.php';
                                     <i class="fas fa-eye ms-2"></i> <?php echo $lesson['view_count']; ?>
                                 </small>
                                 <a href="<?php echo SITE_URL; ?>lessons-details.php?id=<?php echo $lesson['id']; ?>" 
-                                   class="btn btn-sm btn-primary">
-                                    Read <i class="fas fa-arrow-right"></i>
+                                   class="btn btn-primary btn-sm rounded-pill px-4">
+                                    Read <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -166,12 +178,28 @@ require_once '../includes/navbar.php';
                 <i class="fas fa-book-open fa-4x text-muted mb-3"></i>
                 <h3>No Lessons Found</h3>
                 <p class="text-muted">Try adjusting your filters or check back later for new content.</p>
-                <a href="<?php echo SITE_URL; ?>lessons.php" class="btn btn-warning">
+                <a href="<?php echo SITE_URL; ?>lessons.php" class="btn btn-warning rounded-pill px-5">
                     <i class="fas fa-undo"></i> Clear Filters
                 </a>
             </div>
         <?php endif; ?>
     </div>
-</section>
+</div>
+
+<!-- ============================================================ -->
+<!-- STYLES -->
+<!-- ============================================================ -->
+<style>
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+</style>
 
 <?php require_once '../includes/footer.php'; ?>

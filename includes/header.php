@@ -15,23 +15,15 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts - Arabic & Urdu support -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Amiri&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/style.css">
     <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/animations.css">
     <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/responsive.css">
-    <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/loader.css">
-    <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/auth.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/roshan-knowledge-platform/assets/images/icons/favicon.png">
 </head>
 <body>
-    <div class="roshan-loader" aria-label="Loading Roshan" role="status">
-        <div class="roshan-loader__content">
-            <div class="roshan-loader__mark"><i class="fas fa-lightbulb"></i></div>
-            <p class="roshan-loader__name"><?php echo SITE_NAME; ?></p>
-        </div>
-    </div>
