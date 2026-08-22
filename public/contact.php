@@ -7,7 +7,6 @@ require_once '../includes/functions.php';
 $message_sent = false;
 $error = '';
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = sanitize($_POST['name'] ?? '');
     $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
@@ -20,8 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = 'Please enter a valid email address.';
     } else {
-        // In a real project, you would send an email here
-        // For now, we'll store it in a table
         try {
             $stmt = $pdo->prepare("INSERT INTO contacts (name, email, subject, message, type, created_at) 
                                    VALUES (?, ?, ?, ?, ?, NOW())");
@@ -38,24 +35,24 @@ require_once '../includes/navbar.php';
 ?>
 
 <!-- Page Header -->
-<section class="py-5" style="background: var(--primary-gradient);">
+<div style="background: var(--primary-gradient); padding: 50px 0 30px 0; margin-top: -1px;">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center text-white">
-                <h1 class="display-4 fw-bold">
+        <div class="row text-center">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4 fw-bold text-white">
                     <i class="fas fa-envelope text-warning"></i> Contact Us
                 </h1>
-                <p class="lead">We'd love to hear from you</p>
+                <p class="lead text-white-50">We'd love to hear from you</p>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Contact Content -->
-<section class="py-5">
+<div style="padding: 40px 0;">
     <div class="container">
         <?php if ($message_sent): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible fade show" style="border-radius: 16px;">
                 <i class="fas fa-check-circle"></i> 
                 Your message has been sent successfully! We'll get back to you soon.
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -63,16 +60,16 @@ require_once '../includes/navbar.php';
         <?php endif; ?>
         
         <?php if ($error): ?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div class="alert alert-danger alert-dismissible fade show" style="border-radius: 16px;">
                 <i class="fas fa-exclamation-circle"></i> <?php echo $error; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
         <?php endif; ?>
         
-        <div class="row g-5">
+        <div class="row g-4">
             <!-- Contact Form -->
             <div class="col-lg-7">
-                <div class="card shadow-sm border-0">
+                <div class="card border-0 shadow-sm" style="border-radius: 20px; overflow: hidden;">
                     <div class="card-body p-4">
                         <h4 class="card-title fw-bold">Send a Message</h4>
                         <p class="text-muted small">Fill out the form below and we'll get back to you.</p>
@@ -114,7 +111,7 @@ require_once '../includes/navbar.php';
                                 </div>
                                 
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-warning btn-lg w-100">
+                                    <button type="submit" class="btn btn-warning btn-lg w-100 rounded-pill">
                                         <i class="fas fa-paper-plane"></i> Send Message
                                     </button>
                                 </div>
@@ -126,7 +123,7 @@ require_once '../includes/navbar.php';
             
             <!-- Contact Info -->
             <div class="col-lg-5">
-                <div class="card shadow-sm border-0 h-100">
+                <div class="card border-0 shadow-sm h-100" style="border-radius: 20px; overflow: hidden;">
                     <div class="card-body p-4">
                         <h4 class="card-title fw-bold">Get in Touch</h4>
                         <p class="text-muted small">
@@ -134,32 +131,32 @@ require_once '../includes/navbar.php';
                         </p>
                         
                         <div class="mt-4">
-                            <div class="d-flex mb-3">
+                            <div class="d-flex align-items-center mb-3 p-3" style="background: #f8f9fa; border-radius: 12px;">
                                 <div class="me-3 text-warning">
                                     <i class="fas fa-envelope fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h6>Email</h6>
+                                    <h6 class="mb-0">Email</h6>
                                     <p class="small text-muted mb-0">admin@roshan.com</p>
                                 </div>
                             </div>
                             
-                            <div class="d-flex mb-3">
+                            <div class="d-flex align-items-center mb-3 p-3" style="background: #f8f9fa; border-radius: 12px;">
                                 <div class="me-3 text-warning">
                                     <i class="fas fa-map-marker-alt fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h6>Location</h6>
+                                    <h6 class="mb-0">Location</h6>
                                     <p class="small text-muted mb-0">Balochistan, Pakistan</p>
                                 </div>
                             </div>
                             
-                            <div class="d-flex mb-3">
+                            <div class="d-flex align-items-center p-3" style="background: #f8f9fa; border-radius: 12px;">
                                 <div class="me-3 text-warning">
                                     <i class="fas fa-clock fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h6>Office Hours</h6>
+                                    <h6 class="mb-0">Office Hours</h6>
                                     <p class="small text-muted mb-0">Monday - Friday, 9:00 AM - 5:00 PM</p>
                                 </div>
                             </div>
@@ -167,17 +164,15 @@ require_once '../includes/navbar.php';
                         
                         <hr>
                         
-                        <div class="mt-3">
-                            <h6>Follow Us</h6>
-                            <div class="d-flex gap-3">
-                                <a href="#" class="text-dark"><i class="fab fa-facebook fa-2x"></i></a>
-                                <a href="#" class="text-dark"><i class="fab fa-twitter fa-2x"></i></a>
-                                <a href="#" class="text-dark"><i class="fab fa-youtube fa-2x"></i></a>
-                                <a href="#" class="text-dark"><i class="fab fa-github fa-2x"></i></a>
-                            </div>
+                        <h6>Follow Us</h6>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-dark" style="transition: all 0.3s ease;"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#" class="text-dark" style="transition: all 0.3s ease;"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#" class="text-dark" style="transition: all 0.3s ease;"><i class="fab fa-youtube fa-2x"></i></a>
+                            <a href="#" class="text-dark" style="transition: all 0.3s ease;"><i class="fab fa-github fa-2x"></i></a>
                         </div>
                         
-                        <div class="alert alert-warning mt-4 mb-0">
+                        <div class="alert alert-warning mt-4 mb-0" style="border-radius: 12px;">
                             <i class="fas fa-handshake"></i>
                             <strong>Want to contribute?</strong>
                             <p class="small mb-0">Teachers and scholars are welcome to partner with us!</p>
@@ -187,20 +182,13 @@ require_once '../includes/navbar.php';
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- Contact Table SQL (Add this to your database) -->
-<!-- 
-CREATE TABLE IF NOT EXISTS contacts (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    subject VARCHAR(255) NOT NULL,
-    message TEXT NOT NULL,
-    type ENUM('student', 'teacher', 'parent', 'other') DEFAULT 'student',
-    is_read BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
--->
+<style>
+.card.border-0.shadow-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important;
+}
+</style>
 
 <?php require_once '../includes/footer.php'; ?>

@@ -4,18 +4,15 @@ $current_page = 'profile';
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
-// Check if user is logged in
 if (!isLoggedIn()) {
     header('Location: ' . SITE_URL . 'login.php');
     exit();
 }
 
-// Get user data
 $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
 $stmt->execute([$_SESSION['user_id']]);
 $user = $stmt->fetch();
 
-// Handle profile update
 $message = '';
 $error = '';
 
@@ -36,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $new = $_POST['new_password'] ?? '';
         $confirm = $_POST['confirm_password'] ?? '';
         
-        // Verify current password
         if (!password_verify($current, $user['password_hash'])) {
             $error = 'Current password is incorrect.';
         } elseif (strlen($new) < 6) {
@@ -60,31 +56,31 @@ require_once '../includes/navbar.php';
 ?>
 
 <!-- Page Header -->
-<section class="py-5" style="background: var(--primary-gradient);">
+<div style="background: var(--primary-gradient); padding: 50px 0 30px 0; margin-top: -1px;">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center text-white">
-                <h1 class="display-4 fw-bold">
+        <div class="row text-center">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4 fw-bold text-white">
                     <i class="fas fa-user-circle text-warning"></i> My Profile
                 </h1>
-                <p class="lead">Manage your account settings</p>
+                <p class="lead text-white-50">Manage your account settings</p>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Profile Content -->
-<section class="py-5">
+<div style="padding: 40px 0;">
     <div class="container">
         <?php if ($message): ?>
-            <div class="alert alert-success alert-dismissible fade show">
+            <div class="alert alert-success alert-dismissible fade show" style="border-radius: 16px;">
                 <i class="fas fa-check-circle"></i> <?php echo $message; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
         <?php endif; ?>
         
         <?php if ($error): ?>
-            <div class="alert alert-danger alert-dismissible fade show">
+            <div class="alert alert-danger alert-dismissible fade show" style="border-radius: 16px;">
                 <i class="fas fa-exclamation-circle"></i> <?php echo $error; ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
@@ -93,7 +89,7 @@ require_once '../includes/navbar.php';
         <div class="row g-4">
             <!-- Profile Info -->
             <div class="col-lg-6">
-                <div class="card shadow-sm border-0">
+                <div class="card border-0 shadow-sm" style="border-radius: 20px; overflow: hidden;">
                     <div class="card-body p-4">
                         <h5 class="card-title fw-bold">
                             <i class="fas fa-user text-warning"></i> Profile Information
@@ -103,13 +99,13 @@ require_once '../includes/navbar.php';
                             <div class="row g-3">
                                 <div class="col-12">
                                     <label class="form-label">Username</label>
-                                    <input type="text" class="form-control" value="<?php echo $user['username']; ?>" disabled>
+                                    <input type="text" class="form-control bg-light" value="<?php echo $user['username']; ?>" disabled>
                                     <div class="form-text small text-muted">Username cannot be changed</div>
                                 </div>
                                 
                                 <div class="col-12">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" value="<?php echo $user['email']; ?>" disabled>
+                                    <input type="email" class="form-control bg-light" value="<?php echo $user['email']; ?>" disabled>
                                     <div class="form-text small text-muted">Email cannot be changed</div>
                                 </div>
                                 
@@ -126,7 +122,7 @@ require_once '../includes/navbar.php';
                                 </div>
                                 
                                 <div class="col-12">
-                                    <button type="submit" name="update_profile" class="btn btn-warning w-100">
+                                    <button type="submit" name="update_profile" class="btn btn-warning w-100 rounded-pill">
                                         <i class="fas fa-save"></i> Update Profile
                                     </button>
                                 </div>
@@ -138,7 +134,7 @@ require_once '../includes/navbar.php';
             
             <!-- Change Password -->
             <div class="col-lg-6">
-                <div class="card shadow-sm border-0">
+                <div class="card border-0 shadow-sm" style="border-radius: 20px; overflow: hidden;">
                     <div class="card-body p-4">
                         <h5 class="card-title fw-bold">
                             <i class="fas fa-key text-warning"></i> Change Password
@@ -163,7 +159,7 @@ require_once '../includes/navbar.php';
                                 </div>
                                 
                                 <div class="col-12">
-                                    <button type="submit" name="change_password" class="btn btn-primary w-100">
+                                    <button type="submit" name="change_password" class="btn btn-primary w-100 rounded-pill">
                                         <i class="fas fa-key"></i> Change Password
                                     </button>
                                 </div>
@@ -173,8 +169,8 @@ require_once '../includes/navbar.php';
                 </div>
                 
                 <!-- Account Info -->
-                <div class="card mt-3 border-0 bg-light">
-                    <div class="card-body">
+                <div class="card border-0 bg-light mt-3" style="border-radius: 20px; overflow: hidden;">
+                    <div class="card-body p-4">
                         <h6 class="fw-bold"><i class="fas fa-info-circle text-warning"></i> Account Info</h6>
                         <div class="row small">
                             <div class="col-6">
@@ -184,9 +180,9 @@ require_once '../includes/navbar.php';
                             <div class="col-6">
                                 <strong>Status:</strong>
                                 <?php if ($user['is_approved']): ?>
-                                    <span class="badge bg-success">Approved</span>
+                                    <span class="badge bg-success">Approved ✅</span>
                                 <?php else: ?>
-                                    <span class="badge bg-warning">Pending</span>
+                                    <span class="badge bg-warning">Pending ⏳</span>
                                 <?php endif; ?>
                             </div>
                             <div class="col-12 mt-2">
@@ -198,6 +194,6 @@ require_once '../includes/navbar.php';
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <?php require_once '../includes/footer.php'; ?>
