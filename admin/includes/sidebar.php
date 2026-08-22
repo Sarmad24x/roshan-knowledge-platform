@@ -4,37 +4,37 @@
     </h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active' : ''; ?> text-white" href="../dashboard.php">
+            <a class="nav-link" href="/roshan-knowledge-platform/admin/dashboard.php">
                 <i class="fas fa-home"></i> Dashboard
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'categories') !== false ? 'active' : ''; ?> text-white" href="../categories/index.php">
+            <a class="nav-link" href="/roshan-knowledge-platform/admin/categories/index.php">
                 <i class="fas fa-layer-group"></i> Categories
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'lessons') !== false ? 'active' : ''; ?> text-white" href="../lessons/index.php">
+            <a class="nav-link" href="/roshan-knowledge-platform/admin/lessons/index.php">
                 <i class="fas fa-book"></i> Lessons
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'books') !== false ? 'active' : ''; ?> text-white" href="../books/index.php">
+            <a class="nav-link" href="/roshan-knowledge-platform/admin/books/index.php">
                 <i class="fas fa-book-open"></i> Books
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'users') !== false ? 'active' : ''; ?> text-white" href="../users/index.php">
+            <a class="nav-link" href="/roshan-knowledge-platform/admin/users/index.php">
                 <i class="fas fa-users"></i> Users
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'media') !== false ? 'active' : ''; ?> text-white" href="../media/index.php">
+            <a class="nav-link" href="/roshan-knowledge-platform/admin/media/index.php">
                 <i class="fas fa-images"></i> Media
             </a>
         </li>
         <li class="nav-item mt-3">
-            <a class="nav-link text-danger" href="../logout.php">
+            <a class="nav-link text-danger" href="/roshan-knowledge-platform/admin/logout.php">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         </li>
