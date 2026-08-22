@@ -57,7 +57,9 @@
                     <li><a class="dropdown-item" href="<?php echo SITE_URL; ?>favorites.php"><i class="fas fa-heart"></i> Favorites</a></li>
                 <?php if(hasRole('admin') || hasRole('teacher')): ?>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-primary" href="<?php echo SITE_URL; ?>admin/dashboard.php"><i class="fas fa-cog"></i> Admin Panel</a></li>
+                    <li><a class="dropdown-item text-primary" href="/roshan-knowledge-platform/admin/dashboard.php">
+                        <i class="fas fa-cog"></i> Admin Panel
+                    </a></li>
                 <?php endif; ?>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item text-danger" href="<?php echo SITE_URL; ?>logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>

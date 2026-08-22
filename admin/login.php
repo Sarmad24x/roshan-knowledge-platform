@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['user_role'] = $user['role'];
                     $_SESSION['user_full_name'] = $user['full_name'];
-                    header('Location: dashboard.php');
+                    header('Location: /roshan-knowledge-platform/admin/dashboard.php');
                     exit();
                 }
             } else {
