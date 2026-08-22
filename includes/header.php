@@ -19,14 +19,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Amiri&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/style.css">
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/animations.css">
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/responsive.css">
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/loader.css">
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/auth.css">
+    <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/style.css">
+    <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/animations.css">
+    <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/responsive.css">
+    <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/loader.css">
+    <link rel="stylesheet" href="/roshan-knowledge-platform/assets/css/auth.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?php echo SITE_URL; ?>assets/images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="/roshan-knowledge-platform/assets/images/icons/favicon.png">
 </head>
 <body>
     <div class="roshan-loader" aria-label="Loading Roshan" role="status">

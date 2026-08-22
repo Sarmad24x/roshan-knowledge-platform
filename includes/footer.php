@@ -40,14 +40,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom JS -->
-<script src="<?php echo SITE_URL; ?>assets/js/main.js"></script>
-<script src="<?php echo SITE_URL; ?>assets/js/particles.js"></script>
-<script src="<?php echo SITE_URL; ?>assets/js/loader.js"></script>
-<script src="<?php echo SITE_URL; ?>assets/js/toast.js"></script>
-<script src="<?php echo SITE_URL; ?>assets/js/ripple.js"></script>
-<script src="<?php echo SITE_URL; ?>assets/js/scroll-animations.js"></script>
-<script src="<?php echo SITE_URL; ?>assets/js/auth.js"></script>
-<script src="<?php echo SITE_URL; ?>assets/js/confetti.js"></script>
+<script src="/roshan-knowledge-platform/assets/js/main.js"></script>
+<script src="/roshan-knowledge-platform/assets/js/particles.js"></script>
+<script src="/roshan-knowledge-platform/assets/js/loader.js"></script>
+<script src="/roshan-knowledge-platform/assets/js/toast.js"></script>
+<script src="/roshan-knowledge-platform/assets/js/ripple.js"></script>
+<script src="/roshan-knowledge-platform/assets/js/scroll-animations.js"></script>
+<script src="/roshan-knowledge-platform/assets/js/auth.js"></script>
+<script src="/roshan-knowledge-platform/assets/js/confetti.js"></script>
 
 </body>
 </html>

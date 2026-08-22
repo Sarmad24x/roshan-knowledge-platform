@@ -284,3 +284,119 @@
 .hover-glow:hover {
     filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
 }
+/* ============================================
+   ROSHAN - Enhanced Animations
+   ============================================ */
+
+/* ---- Fade In Up with Delay Classes ---- */
+.animate__fadeInUp {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.animate__fadeInUp.animate__delay-1s { animation-delay: 0.5s; }
+.animate__fadeInUp.animate__delay-1-5s { animation-delay: 0.75s; }
+.animate__fadeInUp.animate__delay-2s { animation-delay: 1s; }
+.animate__fadeInUp.animate__delay-3s { animation-delay: 1.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Fade In ---- */
+.animate__fadeIn {
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.animate__fadeIn.animate__delay-0-5s { animation-delay: 0.25s; }
+.animate__fadeIn.animate__delay-1s { animation-delay: 0.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---- Fade In Down ---- */
+.animate__fadeInDown {
+    animation: fadeInDown 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Slide In Left ---- */
+.animate__slideInLeft {
+    animation: slideInLeft 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---- Zoom In ---- */
+.animate__zoomIn {
+    animation: zoomIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---- Pulse Animation ---- */
+@keyframes pulse-soft {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* ---- Shimmer Effect ---- */
+.shimmer {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
