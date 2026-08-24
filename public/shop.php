@@ -147,7 +147,7 @@ require_once '../includes/navbar.php';
                             
                             <div class="card-footer bg-transparent border-0 d-flex gap-2">
                                 <a href="product.php?id=<?php echo $product['id']; ?>" 
-                                   class="btn btn-outline-primary btn-sm flex-grow-1 rounded-pill">
+                                class="btn btn-outline-primary btn-sm flex-grow-1 rounded-pill">
                                     <i class="fas fa-eye"></i> View
                                 </a>
                                 <form method="POST" action="cart.php" style="flex:1;">
