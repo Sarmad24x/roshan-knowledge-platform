@@ -2,7 +2,10 @@
 // includes/cart-functions.php
 // Shopping cart helper functions
 
-session_start();
+// Only start session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Initialize cart if not exists
 function initCart() {

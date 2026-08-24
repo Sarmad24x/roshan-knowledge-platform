@@ -24,6 +24,16 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'products') !== false ? 'active' : ''; ?> text-white" href="/roshan-knowledge-platform/admin/products/index.php">
+                <i class="fas fa-store"></i> Products
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <?php echo strpos($_SERVER['PHP_SELF'], 'orders') !== false ? 'active' : ''; ?> text-white" href="/roshan-knowledge-platform/admin/orders/index.php">
+                <i class="fas fa-shopping-bag"></i> Orders
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/roshan-knowledge-platform/admin/users/index.php">
                 <i class="fas fa-users"></i> Users
             </a>
