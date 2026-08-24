@@ -100,13 +100,13 @@ require_once '../includes/navbar.php';
                 <?php foreach($products as $product): ?>
                     <div class="col-md-6 col-lg-4">
                         <div class="card h-100 shadow-sm border-0 overflow-hidden" 
-                             style="border-radius: 16px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            style="border-radius: 16px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                             
                             <?php if($product['image_path']): ?>
                                 <img src="<?php echo SITE_URL . $product['image_path']; ?>" 
-                                     class="card-img-top" 
-                                     alt="<?php echo htmlspecialchars($product['name']); ?>" 
-                                     style="height: 200px; object-fit: cover;">
+                                    class="card-img-top" 
+                                    alt="<?php echo htmlspecialchars($product['name']); ?>" 
+                                    style="height: 200px; object-fit: cover;">
                             <?php else: ?>
                                 <div style="height: 200px; background: linear-gradient(135deg, #1a1a3e, #2d2d5e); display: flex; align-items: center; justify-content: center;">
                                     <i class="fas fa-box-open fa-4x text-warning" style="opacity: 0.3;"></i>
@@ -143,19 +143,32 @@ require_once '../includes/navbar.php';
                                         <?php echo $product['product_type'] == 'digital' ? '💻 Digital' : '📦 Physical'; ?>
                                     </span>
                                 </div>
+                                
+                                <!-- Stock Status -->
+                                <div class="mt-2">
+                                    <?php if($product['product_type'] == 'digital'): ?>
+                                        <span class="text-success small"><i class="fas fa-check-circle"></i> Available</span>
+                                    <?php elseif($product['stock_quantity'] > 0): ?>
+                                        <span class="text-success small"><i class="fas fa-check-circle"></i> In Stock</span>
+                                    <?php else: ?>
+                                        <span class="text-warning small"><i class="fas fa-clock"></i> Pre-order</span>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                             
-                            <div class="card-footer bg-transparent border-0 d-flex gap-2">
-                                <a href="product.php?id=<?php echo $product['id']; ?>" 
-                                class="btn btn-outline-primary btn-sm flex-grow-1 rounded-pill">
-                                    <i class="fas fa-eye"></i> View
-                                </a>
-                                <form method="POST" action="cart.php" style="flex:1;">
-                                    <input type="hidden" name="add_to_cart" value="<?php echo $product['id']; ?>">
-                                    <button type="submit" class="btn btn-warning btn-sm w-100 rounded-pill">
-                                        <i class="fas fa-cart-plus"></i> Add
-                                    </button>
-                                </form>
+                            <div class="card-footer bg-transparent border-0">
+                                <div class="d-flex gap-2">
+                                    <a href="product.php?id=<?php echo $product['id']; ?>" 
+                                    class="btn btn-outline-primary btn-sm flex-grow-1 rounded-pill text-center">
+                                        <i class="fas fa-eye"></i> View
+                                    </a>
+                                    <form method="POST" action="cart.php" class="flex-grow-1">
+                                        <input type="hidden" name="add_to_cart" value="<?php echo $product['id']; ?>">
+                                        <button type="submit" class="btn btn-warning btn-sm w-100 rounded-pill">
+                                            <i class="fas fa-cart-plus"></i> Add
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

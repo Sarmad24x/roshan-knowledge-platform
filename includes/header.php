@@ -31,5 +31,7 @@ require_once __DIR__ . '/cart-functions.php';
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/roshan-knowledge-platform/assets/images/icons/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/roshan-knowledge-platform/assets/images/icons/favicon.svg">
+    <link rel="shortcut icon" href="/roshan-knowledge-platform/assets/images/icons/favicon.ico">
 </head>
 <body>
