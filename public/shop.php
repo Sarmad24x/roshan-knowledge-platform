@@ -157,9 +157,9 @@ require_once '../includes/navbar.php';
                             </div>
                             
                             <div class="card-footer bg-transparent border-0">
-                                <div class="d-flex gap-2">
+                                <div class="d-flex gap-2 align-items-center">
                                     <a href="product.php?id=<?php echo $product['id']; ?>" 
-                                    class="btn btn-outline-primary btn-sm flex-grow-1 rounded-pill text-center">
+                                    class="btn btn-outline-primary btn-sm flex-grow-1 rounded-pill text-center d-flex align-items-center justify-content-center">
                                         <i class="fas fa-eye"></i> View
                                     </a>
                                     <form method="POST" action="cart.php" class="flex-grow-1">
