@@ -30,6 +30,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link <?php echo ($current_page == 'shop') ? 'active' : ''; ?>" href="<?php echo SITE_URL; ?>shop.php">
+                        <i class="fas fa-store"></i> Shop
+                        <?php if (function_exists('getCartCount') && getCartCount() > 0): ?>
+                            <span class="badge bg-warning text-dark rounded-pill ms-1"><?php echo getCartCount(); ?></span>
+                        <?php endif; ?>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link <?php echo ($current_page == 'teachers') ? 'active' : ''; ?>" href="<?php echo SITE_URL; ?>teachers.php">
                         <i class="fas fa-chalkboard-teacher"></i> Teachers
                     </a>

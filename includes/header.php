@@ -1,3 +1,9 @@
+<?php
+// includes/header.php
+// Add this at the VERY TOP before anything else
+require_once __DIR__ . '/cart-functions.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -30,6 +30,8 @@ define('SITE_URL', 'http://localhost/roshan-knowledge-platform/public/');  // <-
 define('ADMIN_EMAIL', 'admin@roshan.com');
 define('UPLOAD_PATH', __DIR__ . '/../assets/images/uploads/');
 
+// Include cart functions for all pages
+require_once __DIR__ . '/../includes/cart-functions.php';
 // Start session if not started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
