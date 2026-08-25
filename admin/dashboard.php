@@ -86,7 +86,7 @@ include 'includes/admin-header.php';
                             <i class="fas fa-circle" style="font-size: 8px;"></i> Live
                         </span>
                         <span class="badge bg-info rounded-pill px-3 py-2">
-                            <i class="far fa-clock"></i> <?php echo date('h:i A'); ?>
+                            <i class="far fa-clock"></i> <?php date_default_timezone_set('Asia/Kolkata'); echo date('h:i A'); ?>
                         </span>
                     </div>
                 </div>
