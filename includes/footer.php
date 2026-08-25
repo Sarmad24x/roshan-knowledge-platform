@@ -29,7 +29,7 @@
         <div class="text-center">
             <small>&copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. All rights reserved.</small>
             <br>
-            <small class="text-muted">Made with ❤️ for the students of Balochistan</small>
+            <small class="text-white">Made with ❤️ for the students of Balochistan</small>
         </div>
     </div>
 </footer>
