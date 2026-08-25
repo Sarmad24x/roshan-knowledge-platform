@@ -35,6 +35,8 @@ $books = $pdo->query("
     LEFT JOIN categories c ON b.category_id = c.id 
     ORDER BY b.created_at DESC
 ")->fetchAll();
+$page_title = 'Books';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

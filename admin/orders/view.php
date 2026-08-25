@@ -57,6 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_payment'])) {
         exit();
     }
 }
+$page_title = 'Order Details';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

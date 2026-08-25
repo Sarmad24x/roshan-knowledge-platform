@@ -18,6 +18,8 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 }
 
 $categories = $pdo->query("SELECT * FROM categories ORDER BY name")->fetchAll();
+$page_title = 'Categories';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

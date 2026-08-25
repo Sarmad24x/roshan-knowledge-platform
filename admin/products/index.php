@@ -32,6 +32,8 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 
 // Get all products
 $products = $pdo->query("SELECT * FROM products ORDER BY created_at DESC")->fetchAll();
+$page_title = 'Products';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

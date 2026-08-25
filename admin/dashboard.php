@@ -50,6 +50,8 @@ foreach ($monthly_views as $i => $view) {
         $month_data[$month_index % 6] = $view['count'];
     }
 }
+$page_title = 'Dashboard';
+include 'includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

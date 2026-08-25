@@ -35,6 +35,8 @@ $media_items = $pdo->query("
     LEFT JOIN lessons l ON m.lesson_id = l.id 
     ORDER BY m.created_at DESC
 ")->fetchAll();
+$page_title = 'Media';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

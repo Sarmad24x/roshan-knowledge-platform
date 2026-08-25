@@ -52,6 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Please select a file.';
     }
 }
+$page_title = 'Upload Media';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

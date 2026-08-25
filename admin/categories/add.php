@@ -33,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+$page_title = 'Add Category';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

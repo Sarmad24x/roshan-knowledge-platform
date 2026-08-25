@@ -86,6 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+$page_title = 'Edit Lesson';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

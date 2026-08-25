@@ -85,6 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+$page_title = 'Edit Product';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

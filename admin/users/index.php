@@ -33,6 +33,8 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 
 $users = $pdo->query("SELECT * FROM users ORDER BY created_at DESC")->fetchAll();
 $pending_count = $pdo->query("SELECT COUNT(*) FROM users WHERE is_approved = 0 AND role != 'admin'")->fetchColumn();
+$page_title = 'Users';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

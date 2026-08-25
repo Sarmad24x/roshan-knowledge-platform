@@ -42,6 +42,8 @@ $orders = $pdo->query("
     GROUP BY o.id
     ORDER BY o.created_at DESC
 ")->fetchAll();
+$page_title = 'Orders';
+include '../includes/admin-header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
